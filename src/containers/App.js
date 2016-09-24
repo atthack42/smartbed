@@ -29,8 +29,7 @@ class App extends Component {
     let socket = io.connect('http://localhost:8000');
     console.log(socket);
       let that = this;
-    socket.on('connect', function (a) {
-      console.log('socket connected', this);
+    socket.on('connect', function () {
       socket.on('data', function (msg) {
         that.sendMessage(msg);
       });
@@ -50,7 +49,6 @@ class App extends Component {
   	});
   }
   handleSelected(index) {
-    // console.log(e.target.key)
     this.setState({
       currentPatientIndex: index,
       currentPatient: data.patients[index],
