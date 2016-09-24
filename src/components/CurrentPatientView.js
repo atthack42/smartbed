@@ -22,7 +22,7 @@ const CurrentPatientView = ({ data, message }) => {
   } else if (message && message.alarm) {
     alarm = (
       <div style={{ color: 'red', margin: '8px', 'fontSize': '40px' }}>
-        EMERGENCY
+        ABNORMAL MOVEMENT
       </div> 
     );
   } else {
