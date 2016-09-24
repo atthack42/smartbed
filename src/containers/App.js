@@ -44,10 +44,9 @@ class App extends Component {
     });
   }
   sendMessage(val) {
-  	console.log('thisis my val:', val);
-	this.setState({
-      message: val,
-	});
+  	this.setState({
+        message: val,
+  	});
   }
   handleSelected(index) {
     // console.log(e.target.key)
@@ -69,7 +68,6 @@ class App extends Component {
       searchTerms: searchQuery,
       filteredList: searchResults,
     });
-    console.log(this.state.filteredList);
   }
   render() {
     return (
