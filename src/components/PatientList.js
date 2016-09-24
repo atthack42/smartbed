@@ -29,10 +29,8 @@ const PatientList = ({ data, current, select }) => {
     });
   }
   return (
-    <div className="col sm12 l3">
-      <ul>
+    <div className="col sm12 l3" style={{ backgroundColor: '#EFEFEF' }}>
       {patients}
-      </ul>
     </div>
   );
 };
