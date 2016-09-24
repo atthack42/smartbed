@@ -16,3 +16,4 @@ README.md
 npm-debug.log
 .gitignore
 .eslintrc
+data.js
