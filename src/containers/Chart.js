@@ -81,7 +81,7 @@ class Chart extends Component {
   }
 
   render() {
-  	console.log('message in chart: ', this.props.message);
+  	// console.log('message in chart: ', this.props.message);
     return (
         <div ref="chart" style={{ display: 'flex', justifyContent: 'space-around', marginTop: '100px', marginBottom: '100px' }} ></div>
     );
