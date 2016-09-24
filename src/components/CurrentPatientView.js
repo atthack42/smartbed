@@ -6,9 +6,9 @@ const CurrentPatientView = ({ data }) => {
     return <div>No data</div>;
   }
   return (
-    <div>
+    <div className="col sm12 l9">
       <div><img className="avatar" src={data.Image} /></div>
-      <div>{data.firstName}{data.lastName}</div>
+      <div>{data.firstName} {data.lastName}</div>
     </div>
   );
 };
