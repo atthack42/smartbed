@@ -65,6 +65,7 @@ class Chart extends Component {
 	  },
 	  series: [{
 	      name: 'Random data',
+	      color: '#EE6688',
 	      data: (function () {
 	          // generate an array of random data
 	          var data = [],
