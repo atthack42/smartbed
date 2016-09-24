@@ -82,7 +82,7 @@ class Chart extends Component {
 
   render() {
     return (
-        <div ref="chart"></div>
+        <div ref="chart" style={{ display: 'flex', justifyContent: 'space-around', marginTop: '100px', marginBottom: '100px' }} ></div>
     );
   }
 }
