@@ -25,7 +25,7 @@ class Chart extends Component {
 	              var series = this.series[0];
 	              setInterval(function () {
 	                  var x = (new Date()).getTime(), // current time
-	                      y = Math.sqrt(Math.power(that.props.message.yaxis, 2) + Math.power(that.props.message.xaxis, 2));
+	                      y = Math.sqrt(Math.pow(that.props.message.yaxis, 2) + Math.pow(that.props.message.xaxis, 2));
 	                  series.addPoint([x, y], true, true);
 	              }, 500);
 	          }
