@@ -39,10 +39,10 @@ class Chart extends Component {
 	      tickPixelInterval: 150
 	  },
 	  yAxis: {
-        min: -90,
-        max: 90,
+        min: 0,
+        max: 250,
 	      title: {
-	          text: 'Value'
+	          text: 'Movement Intensity'
 	      },
 	      plotLines: [{
 	          value: 0,
@@ -65,6 +65,7 @@ class Chart extends Component {
 	  },
 	  series: [{
 	      name: 'Random data',
+	      color: '#EE6688',
 	      data: (function () {
 	          // generate an array of random data
 	          var data = [],
@@ -85,7 +86,7 @@ class Chart extends Component {
 
   render() {
     return (
-        <div ref="chart" style={{ display: 'flex', justifyContent: 'space-around', marginTop: '100px', marginBottom: '100px' }} ></div>
+        <div ref="chart" style={{ height: '350', width: '800', display: 'flex', justifyContent: 'space-around', marginTop: '1px', marginBottom: '20px' }} ></div>
     );
   }
 }
