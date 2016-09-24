@@ -5,14 +5,19 @@ const PatientList = ({ data }) => {
   console.log(data);
   if (data.length) {
     patients = data.map((patient, index) => (
-      <li key={index}>
-        <img></img>
-        <p>Patient ID: {patient.patientId}</p>
-        <p>Bed #{patient.bed}</p>
-        <p>Room #{patient.roomNum}</p>
+      <li
+        className="patient"
+        key={index}>
+        <img
+          src={patient.Image}
+          alt="patent"
+        />
+        <div>Patient ID: {patient.patientId}</div>
+        <div>Bed #{patient.bed}</div>
+        <div>Room #{patient.roomNum}</div>
         <strong>{patient.firstName} {patient.lastName}</strong>
-        <p>Age: {patient.age}</p>
-        <p>Date Of Birth: {patient.DOB}</p>
+        <div>Age: {patient.Age}</div>
+        <div>Date Of Birth: {patient.DOB}</div>
       </li>
     ));
   }
