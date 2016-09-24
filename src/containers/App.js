@@ -52,6 +52,7 @@ class App extends Component {
     // console.log(e.target.key)
     this.setState({
       currentPatientIndex: index,
+      currentPatient: data.patients[index],
     });
   }
   searchPatients(e) {

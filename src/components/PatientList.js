@@ -23,6 +23,7 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
           margin: '10px',
           background: '#43BFC7',
         };
+        
       }
       return (
         <div>
@@ -34,7 +35,7 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
             <CardHeader
               title={fullName}
               subtitle={patientInfo}
-              avatar='https://thumbs.dreamstime.com/x/lovely-old-woman-16479068.jpg'
+              avatar={patient.Image}
             />
           </Card>
         </div>
@@ -62,7 +63,7 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
             <CardHeader
               title={fullName}
               subtitle={patientInfo}
-              avatar='https://thumbs.dreamstime.com/x/lovely-old-woman-16479068.jpg'
+              avatar={patient.Image}
             />
           </Card>
         </div>
