@@ -46,7 +46,7 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
         margin: '10px',
       };
       let fullName = patient.firstName + ' ' + patient.lastName;
-      let patientInfo = patient.patientId + '\n' + patient.DOB + patient.Age + ' yrs.\nRoom ' + patient.roomNum;
+      let patientInfo = 'Patient ID: ' + patient.patientId + '023 \nRoom ' + patient.roomNum;
       if (current === index) {
         currentPatientStyle = {
           margin: '10px',
