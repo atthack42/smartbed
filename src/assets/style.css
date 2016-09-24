@@ -33,3 +33,15 @@ li > img {
 .patientEntry:hover {
   transform: scale(1.05);
 }
+
+.header {
+  color: #4A4A4A; 
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 27px;
+}
+
+.subHeader {
+  color: #4A4A4A;
+  margin-bottom: 15px;
+}

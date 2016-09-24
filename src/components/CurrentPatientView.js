@@ -2,7 +2,14 @@ import React, { PropTypes } from 'react';
 import Chart from '../containers/Chart';
 import FlatButton from 'material-ui/FlatButton';
 import VitalList from './VitalList';
-
+import CategoryList from './CategoryList';
+const categories = [
+['MEDICATIONS', '50 mg Benzepril'],
+['MEDICAL CONDITIONS', '50 mg Benzepril'],
+['PATIENT HISTORY', '50 mg Benzepril'],
+['EMERGENCY CONTACT', '50 mg Benzepril'],
+['PATIENT NOTES', '50 mg Benzepril'],
+];
 
 const CurrentPatientView = ({ data, message }) => {
   if (data === null) {
@@ -15,8 +22,9 @@ const CurrentPatientView = ({ data, message }) => {
       { !data.status && <div style={{ color: '#88DD55', margin: '20px', 'fontSize': '48px' }} >NORMAL</div>}
       <VitalList />
       <Chart data={data} />
-      <div className="header">Medications</div>
-      <div className="description">50 mg Benzepril</div> 
+      {categories.map(category => 
+        <CategoryList categoryInfo={category} />
+      )}
     </div>
   );
 };
