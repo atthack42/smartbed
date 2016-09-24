@@ -27,3 +27,8 @@ li > img {
 .search-input {
   max-width: 25%;
 }
+
+.icon1 {
+  background-image: url("./patientzero.png");
+  background-attachment: fixed;
+}
