@@ -1,59 +1,79 @@
 import React, { PropTypes } from 'react';
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
-
+import {
+  Card,
+  CardActions,
+  CardHeader,
+  CardMedia,
+  CardTitle,
+  CardText
+} from 'material-ui/Card';
 
 const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
+  let dataset;
   let patients;
   if (searchTerms.length > 0) {
     patients = filteredData.map((patient, index) => {
-      let currentPatient;
+      let currentPatientStyle = {
+        margin: '10px',
+      };
       let fullName = patient.firstName + ' ' + patient.lastName;
       let patientInfo = patient.patientId + '\n' + patient.DOB + patient.Age + ' yrs.\nRoom ' + patient.roomNum;
       if (current === index) {
-        currentPatient = {
-          background: 'red',
+        currentPatientStyle = {
+          margin: '10px',
+          background: '#43BFC7',
         };
       }
       return (
-        <Card
-          style={{ margin: '10px' }}
-        >
-          <CardHeader
-            title={fullName}
-            subtitle={patientInfo}
-            avatar='https://thumbs.dreamstime.com/x/lovely-old-woman-16479068.jpg'
-            subtitleColor='grey'
-          />
-        </Card>
+        <div>
+          <Card
+            className="patientEntry"
+            style={currentPatientStyle}
+            onClick={() => select(index)}
+          >
+            <CardHeader
+              title={fullName}
+              subtitle={patientInfo}
+              avatar='https://thumbs.dreamstime.com/x/lovely-old-woman-16479068.jpg'
+            />
+          </Card>
+        </div>
       );
     });
-  } else if (data.length) {
+  } else if (data.length > 0) {
     patients = data.map((patient, index) => {
-      let currentPatient;
+      let currentPatientStyle = {
+        margin: '10px',
+      };
       let fullName = patient.firstName + ' ' + patient.lastName;
       let patientInfo = patient.patientId + '\n' + patient.DOB + patient.Age + ' yrs.\nRoom ' + patient.roomNum;
       if (current === index) {
-        currentPatient = {
-          background: 'red',
+        currentPatientStyle = {
+          margin: '10px',
+          background: '#43BFC7',
         };
       }
       return (
-        <Card
-          style={{ margin: '10px' }}
-        >
-          <CardHeader
-            title={fullName}
-            subtitle={patientInfo}
-            avatar='https://thumbs.dreamstime.com/x/lovely-old-woman-16479068.jpg'
-            subtitleColor='grey'
-          />
-        </Card>
+        <div>
+          <Card
+            onClick={() => select(index)}
+            style={currentPatientStyle}
+          >
+            <CardHeader
+              title={fullName}
+              subtitle={patientInfo}
+              avatar='https://thumbs.dreamstime.com/x/lovely-old-woman-16479068.jpg'
+            />
+          </Card>
+        </div>
       );
     });
   }
   return (
-    <div className="col sm12 l3" style={{ backgroundColor: '#EFEFEF' }}>
-      {patients}
+    <div className="col sm12 l3 patients">
+      <ul>
+        {patients}
+      </ul>
     </div>
   );
 };
@@ -69,7 +89,7 @@ export default PatientList;
         //   className="patient"
         //   key={index}
         //   onClick={() => select(index)}
-        //   style={currentPatient}
+        //   style={currentPatientStyle}
         // >
         //   <img
         //     src={patient.Image}

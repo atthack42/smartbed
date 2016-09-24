@@ -5,10 +5,6 @@ html {
   background-repeat: no-repeat;
 }
 
-.patient {
-  border: 1px black solid;
-}
-
 li > img {
   max-width: 25%;
   max-height: 25%;
@@ -25,10 +21,15 @@ li > img {
 }
 
 .search-input {
+  width: 25%;
   max-width: 25%;
 }
 
 .icon1 {
   background-image: url("./patientzero.png");
   background-attachment: fixed;
+}
+
+.patientEntry:hover {
+  transform: scale(1.05);
 }
