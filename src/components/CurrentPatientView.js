@@ -36,7 +36,11 @@ const CurrentPatientView = ({ data, message }) => {
     <div className="col sm12 l9">
       <div style={{ color: '#4A4A4A', margin: '20px', fontSize: '27px'}}>{data.firstName.toUpperCase()}'S VITAL SIGNS</div>
       {alarm}
+      <VitalList />
       <Chart data={data} message={message}/>
+        {categories.map(category => {
+          <CategoryList categoryInfo={category} />
+      })}
       <div className="header">Medications</div>
       <div className="description">50 mg Benzepril</div> 
     </div>
