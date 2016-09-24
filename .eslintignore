@@ -12,7 +12,7 @@ chrome.webpack.config.js
 # Ignore Read Me
 README.md
 
-#Ignore MISC Files
+# Ignore MISC Files
 npm-debug.log
 .gitignore
 .eslintrc
