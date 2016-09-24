@@ -23,13 +23,14 @@ class App extends Component {
     };
     this.handleSelected = this.handleSelected.bind(this);
     this.searchPatients = this.searchPatients.bind(this);
+    this.sendMessage = this.sendMessage.bind(this);
   }
   componentDidMount() {
     let socket = io.connect('http://localhost:8000');
     console.log(socket);
-    let that = this;
-    socket.on('connect', function () {
-      console.log('socket connected');
+      let that = this;
+    socket.on('connect', function (a) {
+      console.log('socket connected', this);
       socket.on('data', function (msg) {
         that.sendMessage(msg);
       });
