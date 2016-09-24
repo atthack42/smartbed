@@ -10,6 +10,11 @@ li > img {
   max-height: 25%;
 }
 
+.logo {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
 .avatar {
   line-height: 0;
   height: 45px;
@@ -44,4 +49,9 @@ li > img {
 .subHeader {
   color: #4A4A4A;
   margin-bottom: 15px;
+}
+
+.vitalContainer {
+  align-items: center;
+  text-align: center;
 }
