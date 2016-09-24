@@ -36,6 +36,7 @@ const testPatient = {
   	}
   ]
 };
+import data from '../data.js';
 
 class App extends Component {
   constructor(props) {
@@ -46,6 +47,12 @@ class App extends Component {
     };
     this.handleSignout = this.handleSignout.bind(this);
   }
+  componentDidMount() {
+    this.setState({
+      patients: data.patients,
+      currentPatient: data.patients[0],
+    });
+  }
   handleSignout() {
     console.log('Nurse sign out');
   }
@@ -55,12 +62,12 @@ class App extends Component {
         <Navbar
           signout={this.handleSignout}
         />
-        <PatientList
-          data={this.state.patients}
-        />
-        <CurrentPatientView
-          data={this.state.currentPatient}
-        />
+        <div className="row">
+          <PatientList className="col sm12 l3"
+            data={this.state.patients}
+          />
+          <CurrentPatientView />
+        </div>
       </div>
     );
   }
