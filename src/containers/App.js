@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Navbar from '../components/Navbar';
 import PatientList from '../components/PatientList';
 import CurrentPatientView from '../components/CurrentPatientView';
-
 import data from '../data.js';
 
 class App extends Component {
@@ -11,29 +10,44 @@ class App extends Component {
     this.state = {
       patients: [],
       currentPatient: null,
+      currentPatientIndex: null,
     };
-    this.handleSignout = this.handleSignout.bind(this);
+    this.handleSelected = this.handleSelected.bind(this);
+    this.searchPatients = this.searchPatients.bind(this);
   }
   componentDidMount() {
+    this.addData();
+  }
+  addData() {
     this.setState({
       patients: data.patients,
       currentPatient: data.patients[0],
+      currentPatientIndex: 0,
     });
   }
-  handleSignout() {
-    console.log('Nurse sign out');
+  handleSelected(index) {
+    // console.log(e.target.key)
+    this.setState({
+      currentPatientIndex: index,
+    });
+  }
+  searchPatients(e) {
+    e.preventDefault();
+    // console.log('SEARCH VALUE: ', e.target.value);
   }
   render() {
     return (
       <div>
         <Navbar
-          signout={this.handleSignout}
+          search={this.searchPatients}
         />
         <div className="row">
           <PatientList
             data={this.state.patients}
+            current={this.state.currentPatientIndex}
+            select={this.handleSelected}
           />
-          <CurrentPatientView 
+          <CurrentPatientView
             data={this.state.currentPatient}
           />
         </div>
