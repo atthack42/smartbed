@@ -5,7 +5,8 @@ const Navbar = ({ signout }) => (
     <button
       onClick={signout}
     >Sign Out</button>
-    <input></input>
+    <input
+    placeholder="Find Patients"></input>
   </div>
 );
 
