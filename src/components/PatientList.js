@@ -2,9 +2,32 @@ import React, { PropTypes } from 'react';
 import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
 
 
-const PatientList = ({ data, current, select }) => {
+const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
   let patients;
-  if (data.length) {
+  if (searchTerms.length > 0) {
+    patients = filteredData.map((patient, index) => {
+      let currentPatient;
+      let fullName = patient.firstName + ' ' + patient.lastName;
+      let patientInfo = patient.patientId + '\n' + patient.DOB + patient.Age + ' yrs.\nRoom ' + patient.roomNum;
+      if (current === index) {
+        currentPatient = {
+          background: 'red',
+        };
+      }
+      return (
+        <Card
+          style={{ margin: '10px' }}
+        >
+          <CardHeader
+            title={fullName}
+            subtitle={patientInfo}
+            avatar='https://thumbs.dreamstime.com/x/lovely-old-woman-16479068.jpg'
+            subtitleColor='grey'
+          />
+        </Card>
+      );
+    });
+  } else if (data.length) {
     patients = data.map((patient, index) => {
       let currentPatient;
       let fullName = patient.firstName + ' ' + patient.lastName;
