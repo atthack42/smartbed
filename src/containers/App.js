@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from '../components/Navbar';
 import PatientList from '../components/PatientList';
+import CurrentPatientView from '../components/CurrentPatientView';
 import data from '../data.js';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
   componentDidMount() {
     this.setState({
       patients: data.patients,
+      currentPatient: data.patients[0],
     });
   }
   handleSignout() {
@@ -26,9 +28,12 @@ class App extends Component {
         <Navbar
           signout={this.handleSignout}
         />
-        <PatientList
-          data={this.state.patients}
-        />
+        <div className="row">
+          <PatientList className="col sm12 l3"
+            data={this.state.patients}
+          />
+          <CurrentPatientView />
+        </div>
       </div>
     );
   }
