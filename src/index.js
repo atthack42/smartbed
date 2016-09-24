@@ -1,19 +1,8 @@
-import React, { Component } from 'react';
-import {render} from 'react-dom';
-import Subcomponent from './Subcomponent';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './containers/App';
 
-class App extends Component {
-  render () {
-    return (
-    	<div>
-    	  <p> title </p>
-    	  <Subcomponent />
-    	  <Subcomponent />
-    	  <Subcomponent />
-    	</div>
-    	
-    );
-  }
-}
-
-render(<App/>, document.getElementById('root'));
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);
