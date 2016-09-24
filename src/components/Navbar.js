@@ -4,9 +4,8 @@ const Navbar = ({ search }) => (
   <div>
     <nav>
       <div className="nav-wrapper" style={{ backgroundColor: '#43BFC7'}}>
-        <div className="logo">
-          <img src={require('../assets/Logo.png')} />
-        </div>
+        
+        <img className="logo" src={require('../assets/Logo.png')} />
     
         <input
           className="search-input right"
