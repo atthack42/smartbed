@@ -16,16 +16,24 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
       let currentPatientStyle = {
         margin: '10px',
       };
+      let normalStatus = {
+        background: 'white',
+      };
       let fullName = patient.firstName + ' ' + patient.lastName;
       let patientInfo = patient.patientId + '\n' + patient.DOB + patient.Age + ' yrs.\nRoom ' + patient.roomNum;
       if (current === index) {
         currentPatientStyle = {
           margin: '10px',
           background: '#43BFC7',
+        }; 
+      } else if (!patient.normal) {
+        currentPatientStyle = {
+          margin: '10px',
+          background: 'red',
         };
       }
       return (
-        <div>
+        <div style={normalStatus}>
           <Card
             className="patientEntry"
             style={currentPatientStyle}
@@ -45,12 +53,21 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
       let currentPatientStyle = {
         margin: '10px',
       };
+      let normalStatus = {
+        background: 'white',
+      };
       let fullName = patient.firstName + ' ' + patient.lastName;
       let patientInfo = 'Patient ID: ' + patient.patientId + '023 \nRoom ' + patient.roomNum;
       if (current === index) {
         currentPatientStyle = {
           margin: '10px',
           background: '#43BFC7',
+        };
+      }
+      else if (!patient.normal) {
+        currentPatientStyle = {
+          margin: '10px',
+          background: 'red',
         };
       }
       return (

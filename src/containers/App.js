@@ -35,6 +35,7 @@ class App extends Component {
       });
     });
     this.addData();
+    this.randomizePatientStatus();
   }
   addData() {
     this.setState({
@@ -53,6 +54,30 @@ class App extends Component {
       currentPatientIndex: index,
       currentPatient: data.patients[index],
     });
+  }
+  randomizePatientStatus() {
+    setInterval(() => {
+      setTimeout(() => {
+        const index = Math.floor(Math.random() * this.state.patients.length);
+        let restOfPatients = this.state.patients;
+        let patientChange = this.state.patients[index];
+        patientChange.normal = !patientChange.normal;
+        restOfPatients[index].normal = patientChange.normal;
+        this.setState({
+          patients: restOfPatients,
+        });
+      }, 1000);
+      setTimeout(() => {
+        const index = Math.floor(Math.random() * this.state.patients.length);
+        let restOfPatients = this.state.patients;
+        let patientChange = this.state.patients[index];
+        patientChange.normal = !patientChange.normal;
+        restOfPatients[index].normal = patientChange.normal;
+        this.setState({
+          patients: restOfPatients,
+        });
+      }, 1500);
+    }, 10000);
   }
   searchPatients(e) {
     e.preventDefault();
