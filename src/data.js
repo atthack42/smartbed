@@ -5,7 +5,7 @@ const data = {
       "firstName": "Andrew",
       "lastName": "Fung",
       "DOB": 6071912,
-      "Image": "https://tctechcrunch2011.files.wordpress.com/2014/06/apple_topic.png?w=220",
+      "Image": '/assets/patientzero.png',
       "Age": 24,
       "roomNum": 101,
       "weight": 59,

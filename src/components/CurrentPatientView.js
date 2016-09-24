@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 import Chart from '../containers/Chart';
+import FlatButton from 'material-ui/FlatButton';
+
 
 const CurrentPatientView = ({ data, message }) => {
   if (data === null) {
