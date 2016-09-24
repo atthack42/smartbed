@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import PatientList from '../components/PatientList';
 import CurrentPatientView from '../components/CurrentPatientView';
 import data from '../data.js';
-
+import io from 'socket.io-client/socket.io.js'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -22,6 +22,14 @@ class App extends Component {
     this.searchPatients = this.searchPatients.bind(this);
   }
   componentDidMount() {
+    var socket = io.connect('http://localhost:8000');
+    console.log(socket);
+    socket.on('connect', function () {
+      console.log('socket connected');
+      socket.on('data', function (msg) {
+        console.log(msg);
+      });
+    });
     this.addData();
   }
   addData() {
