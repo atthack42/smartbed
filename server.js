@@ -19,7 +19,7 @@ var mqttClient = mqtt.connect("mqtt://" + hostname + ":" + 1883, {
   "password" : password
 });
 
-app.use(express.static('/Users/namdao/Desktop/HackReactor/smartbed/dist/'));
+app.use(express.static(__dirname + '/dist/'));
 server.listen(8000);
 
 io.on('connection', (socket) => {
