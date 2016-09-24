@@ -2,9 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import Chart from '../containers/Chart';
 
 const CurrentPatientView = ({ data }) => {
-  console.log('currentPatient data: ', data);
   if (data === null) {
-    return <div>No data</div>;
+    return <div></div>;
   }
   return (
     <div className="col sm12 l9">

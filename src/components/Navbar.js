@@ -1,17 +1,21 @@
 import React, { PropTypes } from 'react';
 
-const Navbar = ({ signout }) => (
+const Navbar = ({ search }) => (
   <div>
-    <button
-      onClick={signout}
-    >Sign Out</button>
-    <input
-    placeholder="Find Patients"></input>
+    <nav>
+      <div className="nav-wrapper">
+        <input
+          className="search-input right"
+          placeholder="Find patients"
+          onChange={search}
+        />
+      </div>
+    </nav>
   </div>
 );
 
 Navbar.propTypes = {
-  signout: PropTypes.func.isRequired,
+  search: PropTypes.func.isRequired,
 };
 
 export default Navbar;
