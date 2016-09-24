@@ -4,6 +4,12 @@ import PatientList from '../components/PatientList';
 import CurrentPatientView from '../components/CurrentPatientView';
 import data from '../data.js';
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+const muiTheme = getMuiTheme();
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -37,6 +43,7 @@ class App extends Component {
   }
   render() {
     return (
+      <MuiThemeProvider muiTheme={muiTheme}>
       <div>
         <Navbar
           search={this.searchPatients}
@@ -52,6 +59,7 @@ class App extends Component {
           />
         </div>
       </div>
+      </MuiThemeProvider>
     );
   }
 }
