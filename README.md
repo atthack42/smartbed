@@ -4,7 +4,7 @@ An IoT application for nurses and caretakers to track patient vitals
 ## Team
 
   - __Designer__: Kristine Yuen
-  - __Development Team Members__: Andrew Fung, AJ Grande, Kent Li, Nam Dao
+  - __Development Team Members__: Andrew Fung, AJ Grande, Kent Lee, Nam Dao
 
 ## Usage
 

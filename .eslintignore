@@ -1,0 +1,18 @@
+# Ignore Node Modules
+node_modules
+
+# Ignore Package JSON
+package.json
+
+# Ignore Webpack Configs
+webpack.config.js
+webpack-prod.config.js
+chrome.webpack.config.js
+
+# Ignore Read Me
+README.md
+
+#Ignore MISC Files
+npm-debug.log
+.gitignore
+.eslintrc
