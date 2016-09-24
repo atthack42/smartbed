@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import Chart from '../containers/Chart';
-import FlatButton from 'material-ui/FlatButton';
+// import FlatButton from 'material-ui/FlatButton';
 import VitalList from './VitalList';
 import CategoryList from './CategoryList';
 const categories = [
@@ -38,11 +38,9 @@ const CurrentPatientView = ({ data, message }) => {
       {alarm}
       <VitalList />
       <Chart data={data} message={message}/>
-        {categories.map(category => {
+      {categories.map(category => 
           <CategoryList categoryInfo={category} />
-      })}
-      <div className="header">Medications</div>
-      <div className="description">50 mg Benzepril</div> 
+      )}
     </div>
   );
 };

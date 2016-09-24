@@ -39,8 +39,8 @@ class Chart extends Component {
 	      tickPixelInterval: 150
 	  },
 	  yAxis: {
-        min: -90,
-        max: 90,
+        min: 0,
+        max: 250,
 	      title: {
 	          text: 'Value'
 	      },
@@ -85,7 +85,7 @@ class Chart extends Component {
 
   render() {
     return (
-        <div ref="chart" style={{ display: 'flex', justifyContent: 'space-around', marginTop: '100px', marginBottom: '100px' }} ></div>
+        <div ref="chart" style={{ display: 'flex', justifyContent: 'space-around', marginTop: '1px', marginBottom: '20px' }} ></div>
     );
   }
 }

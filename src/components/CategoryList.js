@@ -8,6 +8,6 @@ const CategoryList = ({ categoryInfo }) => (
 	  </div>
 	  <div className="description">{categoryInfo[1]}</div>
 	</div>
-)
+);
 
 export default CategoryList;
