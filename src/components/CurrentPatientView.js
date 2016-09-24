@@ -7,9 +7,9 @@ const CurrentPatientView = ({ data }) => {
   }
   return (
     <div className="col sm12 l9">
-      <div style={{ color: 'green', margin: '20px', size: '40px'}}>VITAL SIGNS</div>
-      { data.status && <div style={{ color: 'red', margin: '20px' }}>EMERGENCY</div> }
-      { !data.status && <div>NORMAL</div>}
+      <div style={{ color: '#4A4A4A', margin: '20px', fontSize: '27px'}}>VITAL SIGNS</div>
+      { data.status && <div style={{ color: 'red', margin: '20px', 'fontSize': '48px' }}>EMERGENCY</div> }
+      { !data.status && <div style={{ color: '#88DD55', margin: '20px', 'fontSize': '48px' }} >NORMAL</div>}
       <Chart data={data} />
       <div className="header">Medications</div>
       <div className="description">50 mg Benzepril</div> 

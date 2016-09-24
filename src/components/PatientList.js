@@ -8,17 +8,21 @@ const PatientList = ({ data, current, select }) => {
     patients = data.map((patient, index) => {
       let currentPatient;
       let fullName = patient.firstName + ' ' + patient.lastName;
+      let patientInfo = patient.patientId + '\n' + patient.DOB + patient.Age + ' yrs.\nRoom ' + patient.roomNum;
       if (current === index) {
         currentPatient = {
           background: 'red',
         };
       }
       return (
-        <Card>
+        <Card
+          style={{ margin: '10px' }}
+        >
           <CardHeader
             title={fullName}
-            subtitle={patient.DOB}
+            subtitle={patientInfo}
             avatar='https://thumbs.dreamstime.com/x/lovely-old-woman-16479068.jpg'
+            subtitleColor='grey'
           />
         </Card>
       );
