@@ -1,0 +1,9 @@
+.avatar {
+  line-height: 0;
+  height: 45px;
+  width: 45px;
+  margin: auto;
+  margin: 10px 0px;
+  display: block;
+  text-align: center;
+}

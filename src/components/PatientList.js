@@ -17,9 +17,11 @@ const PatientList = ({ data }) => {
     ));
   }
   return (
-    <ul>
-    {patients}
-    </ul>
+    <div className="col sm12 l3">
+      <ul>
+      {patients}
+      </ul>
+    </div>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from '../components/Navbar';
 import PatientList from '../components/PatientList';
 import CurrentPatientView from '../components/CurrentPatientView';
+
 import data from '../data.js';
 
 class App extends Component {
@@ -29,10 +30,12 @@ class App extends Component {
           signout={this.handleSignout}
         />
         <div className="row">
-          <PatientList className="col sm12 l3"
+          <PatientList
             data={this.state.patients}
           />
-          <CurrentPatientView />
+          <CurrentPatientView 
+            data={this.state.currentPatient}
+          />
         </div>
       </div>
     );

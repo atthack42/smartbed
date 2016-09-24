@@ -1,12 +1,14 @@
 import React, { PropTypes } from 'react';
 
-const CurrentPatientView = ({ currentPatient }) => {
-  if (currentPatient === null) {
-    return <div></div>;
+const CurrentPatientView = ({ data }) => {
+  console.log('currentPatient data: ', data);
+  if (data === null) {
+    return <div>No data</div>;
   }
   return (
-    <div>
-      Current Patient
+    <div className="col sm12 l9">
+      <div><img className="avatar" src={data.Image} /></div>
+      <div>{data.firstName} {data.lastName}</div>
     </div>
   );
 };
