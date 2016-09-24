@@ -29,3 +29,7 @@ li > img {
   background-image: url("./patientzero.png");
   background-attachment: fixed;
 }
+
+.patientEntry:hover {
+  transform: scale(1.05);
+}

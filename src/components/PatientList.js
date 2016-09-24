@@ -21,13 +21,15 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
       if (current === index) {
         currentPatientStyle = {
           margin: '10px',
-          background: 'red',
+          background: '#43BFC7',
         };
       }
       return (
         <div>
           <Card
+            className="patientEntry"
             style={currentPatientStyle}
+            onClick={() => select(index)}
           >
             <CardHeader
               title={fullName}
@@ -48,7 +50,7 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
       if (current === index) {
         currentPatientStyle = {
           margin: '10px',
-          background: 'red',
+          background: '#43BFC7',
         };
       }
       return (

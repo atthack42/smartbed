@@ -12,11 +12,14 @@ class Chart extends Component {
   }
 
   componentDidMount() {
+  	let that = this;
     this.chart = $(ReactDOM.findDOMNode(this.refs.chart)).highcharts({
       chart: {
 	      type: 'spline',
 	      animation: highcharts.svg, // don't animate in old IE
 	      marginRight: 10,
+	      // marginTop: 80,
+	      // marginBottom: 80,
 	      events: {
 	          load: function () {
 
@@ -24,9 +27,9 @@ class Chart extends Component {
 	              var series = this.series[0];
 	              setInterval(function () {
 	                  var x = (new Date()).getTime(), // current time
-	                      y = Math.random();
+	                      y = that.props.message.yaxis;
 	                  series.addPoint([x, y], true, true);
-	              }, 1000);
+	              }, 500);
 	          }
 	      }
 	  },
@@ -81,7 +84,6 @@ class Chart extends Component {
   }
 
   render() {
-  	// console.log('message in chart: ', this.props.message);
     return (
         <div ref="chart" style={{ display: 'flex', justifyContent: 'space-around', marginTop: '100px', marginBottom: '100px' }} ></div>
     );
