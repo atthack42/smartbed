@@ -23,7 +23,6 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
           margin: '10px',
           background: '#43BFC7',
         };
-        
       }
       return (
         <div>
