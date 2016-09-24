@@ -18,8 +18,6 @@ class Chart extends Component {
 	      type: 'spline',
 	      animation: highcharts.svg, // don't animate in old IE
 	      marginRight: 10,
-	      // marginTop: 80,
-	      // marginBottom: 80,
 	      events: {
 	          load: function () {
 
@@ -41,6 +39,8 @@ class Chart extends Component {
 	      tickPixelInterval: 150
 	  },
 	  yAxis: {
+        min: -90,
+        max: 90,
 	      title: {
 	          text: 'Value'
 	      },

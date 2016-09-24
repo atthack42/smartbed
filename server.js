@@ -34,9 +34,27 @@ mqttClient.on('connect', () => {
       console.log('MQTT client connected to IBM IoT Cloud');
     }
   });
-
-  mqttClient.on('message', (topic, message) => {
-    var data = JSON.parse(message.toString());
-    io.emit('data', data);
-  });
+    var queue = [];
+    mqttClient.on('message', (topic, message) => {
+      let data = JSON.parse(message.toString());
+      queue.push(data);
+      console.log(queue, queue.length);
+      if (queue.length < 3) {
+        data.alarm = false;
+        io.emit('data', data);
+      } else {
+        var dataOne = queue.shift();
+        var dataTwo = queue[0];
+        if (Math.abs(dataOne.xaxis - dataTwo.xaxis) > 10 || Math.abs(dataOne.yaxis - dataTwo.yaxis) > 10) {
+          data.alarm = true;
+          io.emit('data', data);
+        } else {
+          data.alarm = false;
+          io.emit('data', data);
+        }
+      }
+    });
 });
+
+
+
