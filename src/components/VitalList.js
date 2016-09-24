@@ -7,7 +7,7 @@ const vitals = [
   ['TEMPERATURE', require('../assets/Temperature.png'), 'degrees'],
   ['BPLevel', require('../assets/BPLevel.png'), 'mm/Hg'],
   ['PULSE', require('../assets/Pulse.png'), 'BPM'],
-  ['MOVEMENT', require('../assets/Movement.png'), 'hours'],
+  ['MOVEMENT', require('../assets/Movement.png'), 'minutes'],
 ];
 
 class VitalList extends Component {
@@ -31,12 +31,12 @@ class VitalList extends Component {
 
   randomize() {
     setInterval(()=> {
-      const RESP = Math.floor(Math.random() * 80);
-      const OXY = Math.floor(Math.random() * 80);
-      const TEMP = Math.floor(Math.random() * 80);
-      const BP = Math.floor(Math.random() * 80);
-      const PUL = Math.floor(Math.random() * 80);
-      const MOVE = Math.floor(Math.random() * 80);
+      const RESP = Math.floor(Math.random() * 8) + 8;
+      const OXY = Math.floor(Math.random() * 10) + 89;
+      const TEMP = Math.floor(Math.random() * 3.5) + 96;
+      const BP = Math.floor(Math.random() * 35);
+      const PUL = Math.floor(Math.random() * 35) + 40;
+      const MOVE = Math.floor(Math.random() * 60) + 15;
       this.setState({
         vitalData: {
           RESPIRATORY: RESP,
