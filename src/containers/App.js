@@ -17,6 +17,7 @@ class App extends Component {
       patients: [],
       currentPatient: null,
       currentPatientIndex: null,
+      message: null,
       searchTerms: '',
       filteredList: [],
     };
@@ -24,12 +25,13 @@ class App extends Component {
     this.searchPatients = this.searchPatients.bind(this);
   }
   componentDidMount() {
-    var socket = io.connect('http://localhost:8000');
+    let socket = io.connect('http://localhost:8000');
     console.log(socket);
+    let that = this;
     socket.on('connect', function () {
       console.log('socket connected');
       socket.on('data', function (msg) {
-        // console.log(msg);
+        that.sendMessage(msg);
       });
     });
     this.addData();
@@ -40,6 +42,12 @@ class App extends Component {
       currentPatient: data.patients[0],
       currentPatientIndex: 0,
     });
+  }
+  sendMessage(val) {
+  	console.log('thisis my val:', val);
+	this.setState({
+      message: val,
+	});
   }
   handleSelected(index) {
     // console.log(e.target.key)
@@ -80,6 +88,7 @@ class App extends Component {
           />
           <CurrentPatientView
             data={this.state.currentPatient}
+            message={this.state.message}
           />
         </div>
       </div>
