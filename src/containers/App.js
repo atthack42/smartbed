@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       patients: [],
       currentPatient: null,
+      currentPatientIndex: null,
     };
     this.handleSelected = this.handleSelected.bind(this);
     this.searchPatients = this.searchPatients.bind(this);
@@ -21,10 +22,14 @@ class App extends Component {
     this.setState({
       patients: data.patients,
       currentPatient: data.patients[0],
+      currentPatientIndex: 0,
     });
   }
-  handleSelected() {
-
+  handleSelected(index) {
+    // console.log(e.target.key)
+    this.setState({
+      currentPatientIndex: index,
+    });
   }
   searchPatients(e) {
     e.preventDefault();
@@ -39,6 +44,8 @@ class App extends Component {
         <div className="row">
           <PatientList
             data={this.state.patients}
+            current={this.state.currentPatientIndex}
+            select={this.handleSelected}
           />
           <CurrentPatientView
             data={this.state.currentPatient}
