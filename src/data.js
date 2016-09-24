@@ -31,7 +31,8 @@ const data = {
           "relationship": "Mother",
           "conditions": ["anemia"]
         }
-      ]
+      ],
+      "normal": true,
    },
    {
       "patientId": 124,
@@ -64,7 +65,8 @@ const data = {
           "relationship": "Mother",
           "conditions": ["black lung"]
         }
-      ]
+      ],
+      "normal": true,
    },
    {
       "patientId": 125,
@@ -97,7 +99,8 @@ const data = {
           "relationship": "Mother",
           "conditions": ["anemia"]
         }
-      ]
+      ],
+      "normal": true,
    },
    {
       "patientId": 126,
@@ -130,7 +133,8 @@ const data = {
           "relationship": "Mother",
           "conditions": ["anemia"]
         }
-      ]
+      ],
+      "normal": true,
    },
    {
       "patientId": 127,
@@ -163,7 +167,8 @@ const data = {
           "relationship": "Mother",
           "conditions": ["anemia"]
         }
-      ]
+      ],
+      "normal": true,
    },
    {
       "patientId": 128,
@@ -196,7 +201,8 @@ const data = {
           "relationship": "Mother",
           "conditions": ["anemia"]
         }
-      ]
+      ],
+      "normal": true,
    }
  ] 
 };
