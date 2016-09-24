@@ -1,0 +1,196 @@
+{
+ "Patients": [
+   {
+      "patientId": 123,
+      "firstName": "Andrew",
+      "lastName": "Fung",
+      "DOB": 06071912,
+      "Image": "url",
+      "Age": 24,
+      "roomNum": 101,
+      "weight": 59,
+      "height": 172,
+      "emergencyContact": {
+      	"firstName": "Will",
+      	"lastName": "Fung",
+      	"relationship": "Father",
+      	"phone": 59046983
+      },
+      "preexistingConditions": ["high blood pressure", "asthma", "cancer"],
+      "familyHistory": [
+      	{
+      	  "firstName": "Will",
+      	  "lastName": "Fung",
+      	  "relationship": "Father",
+      	  "conditions": ["high blood pressure"]
+      	},
+      	{
+      	  "firstName": "Lynn",
+      	  "lastName": "Fung",
+      	  "relationship": "Mother",
+      	  "conditions": ["anemia"]
+      	}
+      ]
+   },
+   {
+   	  "patientId": 124,
+   	  "firstName": "AJ",
+   	  "lastName": "Grande",
+   	  "DOB": 10301882,
+   	  "Image": "url",
+   	  "Age": 134,
+   	  "roomNum": 102,
+   	  "weight": 100,
+   	  "height": 30,
+   	  "emergencyContact": {
+   	  	"firstName": "Albert",
+   	  	"lastName": "Grande",
+   	  	"relationship": "Brother",
+   	  	"phone": 5540507403
+   	  },
+   	  "preexistingConditions": ["erectile disfunction", "bipolar"],
+   	  "familyHistory": [
+   	  	{
+   	  	  "firstName": "Bob",
+   	  	  "lastName": "Li",
+   	  	  "relationship": "Father",
+   	  	  "conditions": ["kidney cancer"]
+   	  	},
+   	  	{
+   	  	  "firstName": "Bronwyn",
+   	  	  "lastName": "Li",
+   	  	  "relationship": "Mother",
+   	  	  "conditions": ["black lung"]
+   	  	}
+   	  ]
+   },
+   {
+   	  "patientId": 125,
+   	  "firstName": "Kent",
+   	  "lastName": "Li",
+   	  "DOB": 06202015,
+   	  "Image": "url",
+   	  "Age": 40,
+   	  "roomNum": 103,
+   	  "weight": 59,
+   	  "height": 172,
+   	  "emergencyContact": {
+   	  	"firstName": "Will",
+   	  	"lastName": "Li",
+   	  	"relationship": "Father",
+   	  	"phone": 59046983
+   	  },
+   	  "preexistingConditions": ["high blood pressure", "asthma", "cancer"],
+   	  "familyHistory": [
+   	  	{
+   	  	  "firstName": "Will",
+   	  	  "lastName": "Fung",
+   	  	  "relationship": "Father",
+   	  	  "conditions": ["high blood pressure"]
+   	  	},
+   	  	{
+   	  	  "firstName": "Lynn",
+   	  	  "lastName": "Fung",
+   	  	  "relationship": "Mother",
+   	  	  "conditions": ["anemia"]
+   	  	}
+   	  ]
+   },
+   {
+   	  "patientId": 126,
+   	  "firstName": "Nam",
+   	  "lastName": "Dao",
+   	  "DOB": 00000001,
+   	  "Image": "url",
+   	  "Age": 1000,
+   	  "roomNum": 104,
+   	  "weight": 55,
+   	  "height": 160,
+   	  "emergencyContact": {
+   	  	"firstName": "Jake",
+   	  	"lastName": "Trinh",
+   	  	"relationship": "Father",
+   	  	"phone": 59046983
+   	  },
+   	  "preexistingConditions": ["high blood pressure", "asthma", "cancer"],
+   	  "familyHistory": [
+   	  	{
+   	  	  "firstName": "Jake",
+   	  	  "lastName": "Trinh",
+   	  	  "relationship": "Father",
+   	  	  "conditions": ["high blood pressure"]
+   	  	},
+   	  	{
+   	  	  "firstName": "Lynn",
+   	  	  "lastName": "Dao",
+   	  	  "relationship": "Mother",
+   	  	  "conditions": ["anemia"]
+   	  	}
+   	  ]
+   },
+   {
+   	  "patientId": 127,
+   	  "firstName": "Kristine",
+   	  "lastName": "Yuen",
+   	  "DOB": 04211582,
+   	  "Image": "url",
+   	  "Age": 10,
+   	  "roomNum": 105,
+   	  "weight": 50,
+   	  "height": 150,
+   	  "emergencyContact": {
+   	  	"firstName": "Mark",
+   	  	"lastName": "Yuen",
+   	  	"relationship": "Father",
+   	  	"phone": 59046983
+   	  },
+   	  "preexistingConditions": ["high blood pressure", "asthma", "cancer"],
+   	  "familyHistory": [
+   	  	{
+   	  	  "firstName": "Mark",
+   	  	  "lastName": "Yuen",
+   	  	  "relationship": "Father",
+   	  	  "conditions": ["high blood pressure"]
+   	  	},
+   	  	{
+   	  	  "firstName": "Lynn",
+   	  	  "lastName": "Yuen",
+   	  	  "relationship": "Mother",
+   	  	  "conditions": ["anemia"]
+   	  	}
+   	  ]
+   },
+   {
+   	  "patientId": 128,
+   	  "firstName": "John",
+   	  "lastName": "Doe",
+   	  "DOB": 04211540,
+   	  "Image": "url",
+   	  "Age": 100,
+   	  "roomNum": 106,
+   	  "weight": 50,
+   	  "height": 150,
+   	  "emergencyContact": {
+   	  	"firstName": "Mark",
+   	  	"lastName": "Doe",
+   	  	"relationship": "Father",
+   	  	"phone": 59046983
+   	  },
+   	  "preexistingConditions": ["high blood pressure", "asthma", "cancer"],
+   	  "familyHistory": [
+   	  	{
+   	  	  "firstName": "Mark",
+   	  	  "lastName": "Doe",
+   	  	  "relationship": "Father",
+   	  	  "conditions": ["high blood pressure"]
+   	  	},
+   	  	{
+   	  	  "firstName": "Lynn",
+   	  	  "lastName": "Doe",
+   	  	  "relationship": "Mother",
+   	  	  "conditions": ["anemia"]
+   	  	}
+   	  ]
+   }
+ ] 
+}
