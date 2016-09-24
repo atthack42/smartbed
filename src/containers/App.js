@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import PatientList from '../components/PatientList';
 import CurrentPatientView from '../components/CurrentPatientView';
 import data from '../data.js';
-import io from 'socket.io-client/socket.io.js'
+import io from 'socket.io-client/socket.io.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -18,6 +18,8 @@ class App extends Component {
       currentPatient: null,
       currentPatientIndex: null,
       message: null,
+      searchTerms: '',
+      filteredList: [],
     };
     this.handleSelected = this.handleSelected.bind(this);
     this.searchPatients = this.searchPatients.bind(this);
@@ -55,7 +57,19 @@ class App extends Component {
   }
   searchPatients(e) {
     e.preventDefault();
-    // console.log('SEARCH VALUE: ', e.target.value);
+    let searchQuery = e.target.value;
+    let searchResults = this.state.patients.filter(patient => {
+      let fullName = patient.firstName + ' ' + patient.lastName;
+      // If the search query matches the letters of the full name
+      if (searchQuery.toLowerCase() === fullName.slice(0, searchQuery.length).toLowerCase()) {
+        return patient;
+      }
+    });
+    this.setState({
+      searchTerms: searchQuery,
+      filteredList: searchResults,
+    });
+    console.log(this.state.filteredList);
   }
   render() {
     return (
@@ -69,6 +83,8 @@ class App extends Component {
             data={this.state.patients}
             current={this.state.currentPatientIndex}
             select={this.handleSelected}
+            searchTerms={this.state.searchTerms}
+            filteredData={this.state.filteredList}
           />
           <CurrentPatientView
             data={this.state.currentPatient}
