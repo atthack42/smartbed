@@ -1,0 +1,29 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.patient {
+  border: 1px black solid;
+}
+
+li > img {
+  max-width: 25%;
+  max-height: 25%;
+}
+
+.avatar {
+  line-height: 0;
+  height: 45px;
+  width: 45px;
+  margin: auto;
+  margin: 10px 0px;
+  display: block;
+  text-align: center;
+}
+
+.search-input {
+  max-width: 25%;
+}
