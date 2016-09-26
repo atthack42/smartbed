@@ -33,7 +33,7 @@ const CurrentPatientView = ({ data, message }) => {
     );
   }
   return (
-    <div className="col sm12 l9">
+    <div className="col sm12 l9 currentPatient">
       <div style={{ display: 'flex', 'flex-direction': 'row' }}>
       <div style={{ color: '#4A4A4A', margin: '20px', fontSize: '27px'}}>{data.firstName.toUpperCase()}'S VITAL SIGNS </div>
       {alarm}
