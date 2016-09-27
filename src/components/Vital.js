@@ -23,8 +23,13 @@ const Vital = ({ vitalInfo, vitalData }) => {
     </div>
   ));
   return (
-    <div style={{ display: 'flex', 'flex-direction': 'row' }}>
-    {images}
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+      }}
+    >
+      {images}
     </div>
   );
 };

@@ -5,7 +5,7 @@ const CategoryList = ({ categoryInfo }) => (
     <div
       style={{
         display: 'flex',
-        'flex-direction': 'row',
+        flexDirection: 'row',
       }}
     >
       <div className="header">

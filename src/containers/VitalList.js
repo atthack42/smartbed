@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Vital from './Vital';
+import Vital from '../components/Vital';
 
 /* eslint-disable */
 const vitals = [
@@ -53,8 +53,8 @@ class VitalList extends Component {
     return (
       <div
         style={{
-          'margin-top': '1.5em',
-          'margin-bottom': '1.5em',
+          marginTop: '1.5em',
+          marginBottom: '1.5em',
         }}
       >
         <Vital
