@@ -12,10 +12,15 @@ chrome.webpack.config.js
 # Ignore Read Me
 README.md
 
+# Ignore Assets folder
+/assets
+
 # Ignore MISC Files
 npm-debug.log
 .gitignore
 .eslintrc
 data.js
-server.js
-containers/Chart.js
+jquery-2.2.4.min.js
+materialize.min.css
+materialize.min.js
+index.js

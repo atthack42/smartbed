@@ -1,14 +1,13 @@
 import React, { PropTypes } from 'react';
 import Chart from '../containers/Chart';
-// import FlatButton from 'material-ui/FlatButton';
-import VitalList from './VitalList';
+import VitalList from '../containers/VitalList';
 import CategoryList from './CategoryList';
 const categories = [
-['MEDICATIONS', '50 mg Benzepril'],
-['MEDICAL CONDITIONS', '50 mg Benzepril'],
-['PATIENT HISTORY', '50 mg Benzepril'],
-['EMERGENCY CONTACT', '50 mg Benzepril'],
-['PATIENT NOTES', '50 mg Benzepril'],
+  ['MEDICATIONS', '50 mg Benzepril'],
+  ['MEDICAL CONDITIONS', '50 mg Benzepril'],
+  ['PATIENT HISTORY', '50 mg Benzepril'],
+  ['EMERGENCY CONTACT', '50 mg Benzepril'],
+  ['PATIENT NOTES', '50 mg Benzepril'],
 ];
 
 const CurrentPatientView = ({ data, message }) => {
@@ -21,33 +20,63 @@ const CurrentPatientView = ({ data, message }) => {
     );
   } else if (message && message.alarm) {
     alarm = (
-      <div style={{ color: 'red', margin: '8px', 'fontSize': '40px' }}>
+      <div
+        style={{
+          color: 'red',
+          margin: '8px',
+          fontSize: '40px',
+        }}
+      >
         ABNORMAL MOVEMENT
-      </div> 
+      </div>
     );
   } else {
     alarm = (
-      <div style={{ color: '#88DD55', margin: '8px', 'fontSize': '40px' }}>
+      <div
+        style={{
+          color: '#88DD55',
+          margin: '8px',
+          fontSize: '40px',
+        }}
+      >
         NORMAL
       </div>
     );
   }
   return (
-    <div className="col sm12 l9">
-      <div style={{ display: 'flex', 'flex-direction': 'row' }}>
-      <div style={{ color: '#4A4A4A', margin: '20px', fontSize: '27px'}}>{data.firstName.toUpperCase()}'S VITAL SIGNS </div>
+    <div className="col sm12 l9 currentPatient">
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+        }}
+      >
+        <div
+          style={{
+            color: '#4A4A4A',
+            margin: '20px',
+            fontSize: '27px',
+          }}
+        >
+          {data.firstName.toUpperCase()}'S VITAL SIGNS
+        </div>
       {alarm}
       </div>
       <VitalList />
-      <Chart data={data} message={message}/>
-      {categories.map(category => 
-          <CategoryList categoryInfo={category} />
+      <Chart data={data} message={message} />
+      {categories.map((category, index) =>
+        <CategoryList
+          key={index}
+          categoryInfo={category}
+        />
       )}
     </div>
   );
 };
 
 CurrentPatientView.propTypes = {
+  data: PropTypes.object,
+  message: PropTypes.object,
   currentPatient: PropTypes.object,
 };
 

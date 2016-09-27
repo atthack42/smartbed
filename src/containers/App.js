@@ -26,11 +26,11 @@ class App extends Component {
     this.sendMessage = this.sendMessage.bind(this);
   }
   componentDidMount() {
-    let socket = io.connect('http://localhost:8000');
+    const socket = io.connect('http://localhost:8000');
     console.log(socket);
-      let that = this;
-    socket.on('connect', function () {
-      socket.on('data', function (msg) {
+    const that = this;
+    socket.on('connect', () => {
+      socket.on('data', (msg) => {
         that.sendMessage(msg);
       });
     });
@@ -45,9 +45,9 @@ class App extends Component {
     });
   }
   sendMessage(val) {
-  	this.setState({
-        message: val,
-  	});
+    this.setState({
+      message: val,
+    });
   }
   handleSelected(index) {
     this.setState({
@@ -59,8 +59,8 @@ class App extends Component {
     setInterval(() => {
       setTimeout(() => {
         const index = Math.floor(Math.random() * this.state.patients.length);
-        let restOfPatients = this.state.patients;
-        let patientChange = this.state.patients[index];
+        const restOfPatients = this.state.patients;
+        const patientChange = this.state.patients[index];
         patientChange.normal = !patientChange.normal;
         restOfPatients[index].normal = patientChange.normal;
         this.setState({
@@ -69,8 +69,8 @@ class App extends Component {
       }, 1000);
       setTimeout(() => {
         const index = Math.floor(Math.random() * this.state.patients.length);
-        let restOfPatients = this.state.patients;
-        let patientChange = this.state.patients[index];
+        const restOfPatients = this.state.patients;
+        const patientChange = this.state.patients[index];
         patientChange.normal = !patientChange.normal;
         restOfPatients[index].normal = patientChange.normal;
         this.setState({
@@ -81,13 +81,14 @@ class App extends Component {
   }
   searchPatients(e) {
     e.preventDefault();
-    let searchQuery = e.target.value;
-    let searchResults = this.state.patients.filter(patient => {
-      let fullName = patient.firstName + ' ' + patient.lastName;
+    const searchQuery = e.target.value;
+    const searchResults = this.state.patients.filter(patient => {
+      const fullName = `${patient.firstName} ${patient.lastName}`;
       // If the search query matches the letters of the full name
       if (searchQuery.toLowerCase() === fullName.slice(0, searchQuery.length).toLowerCase()) {
         return patient;
       }
+      return false;
     });
     this.setState({
       searchTerms: searchQuery,
@@ -97,24 +98,24 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
-      <div>
-        <Navbar
-          search={this.searchPatients}
-        />
-        <div className="row">
-          <PatientList
-            data={this.state.patients}
-            current={this.state.currentPatientIndex}
-            select={this.handleSelected}
-            searchTerms={this.state.searchTerms}
-            filteredData={this.state.filteredList}
+        <div>
+          <Navbar
+            search={this.searchPatients}
           />
-          <CurrentPatientView
-            data={this.state.currentPatient}
-            message={this.state.message}
-          />
+          <div className="row">
+            <PatientList
+              data={this.state.patients}
+              current={this.state.currentPatientIndex}
+              select={this.handleSelected}
+              searchTerms={this.state.searchTerms}
+              filteredData={this.state.filteredList}
+            />
+            <CurrentPatientView
+              data={this.state.currentPatient}
+              message={this.state.message}
+            />
+          </div>
         </div>
-      </div>
       </MuiThemeProvider>
     );
   }

@@ -1,15 +1,10 @@
 import React, { PropTypes } from 'react';
 import {
   Card,
-  CardActions,
   CardHeader,
-  CardMedia,
-  CardTitle,
-  CardText
 } from 'material-ui/Card';
 
 const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
-  let dataset;
   let patients;
   if (searchTerms.length > 0) {
     patients = filteredData.map((patient, index) => {
@@ -19,13 +14,15 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
       let normalStatus = {
         background: 'white',
       };
-      let fullName = patient.firstName + ' ' + patient.lastName;
-      let patientInfo = patient.patientId + '\n' + patient.DOB + patient.Age + ' yrs.\nRoom ' + patient.roomNum;
+      let fullName = `${patient.firstName} ${patient.lastName}`;
+      let patientInfo = `ID: ${patient.patientId} \n 
+        DoB: ${patient.DOB}
+        Age: ${patient.Age} yrs. \n Room ${patient.roomNum}`;
       if (current === index) {
         currentPatientStyle = {
           margin: '10px',
           background: '#43BFC7',
-        }; 
+        };
       } else if (!patient.normal) {
         currentPatientStyle = {
           margin: '10px',
@@ -33,7 +30,10 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
         };
       }
       return (
-        <div style={normalStatus}>
+        <div
+          key={index}
+          style={normalStatus}
+        >
           <Card
             className="patientEntry"
             style={currentPatientStyle}
@@ -53,25 +53,23 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
       let currentPatientStyle = {
         margin: '10px',
       };
-      let normalStatus = {
-        background: 'white',
-      };
-      let fullName = patient.firstName + ' ' + patient.lastName;
-      let patientInfo = 'Patient ID: ' + patient.patientId + '023 \nRoom ' + patient.roomNum;
+      let fullName = `${patient.firstName} ${patient.lastName}`;
+      let patientInfo = `ID: ${patient.patientId} \n 
+        DoB: ${patient.DOB}
+        Age: ${patient.Age} yrs. \n Room ${patient.roomNum}`;
       if (current === index) {
         currentPatientStyle = {
           margin: '10px',
           background: '#43BFC7',
         };
-      }
-      else if (!patient.normal) {
+      } else if (!patient.normal) {
         currentPatientStyle = {
           margin: '10px',
           background: 'red',
         };
       }
       return (
-        <div>
+        <div key={index}>
           <Card
             onClick={() => select(index)}
             style={currentPatientStyle}
@@ -97,25 +95,11 @@ const PatientList = ({ data, searchTerms, filteredData, current, select }) => {
 
 PatientList.propTypes = {
   data: PropTypes.array,
+  searchTerms: PropTypes.string.isRequired,
+  filteredData: PropTypes.array.isRequired,
   current: PropTypes.number,
   select: PropTypes.func.isRequired,
 };
 
 export default PatientList;
-        // <li
-        //   className="patient"
-        //   key={index}
-        //   onClick={() => select(index)}
-        //   style={currentPatientStyle}
-        // >
-        //   <img
-        //     src={patient.Image}
-        //     alt="patent"
-        //   />
-        //   <div>Patient ID: {patient.patientId}</div>
-        //   <div>Bed #{patient.bed}</div>
-        //   <div>Room #{patient.roomNum}</div>
-        //   <strong>{patient.firstName} {patient.lastName}</strong>
-        //   <div>Age: {patient.Age}</div>
-        //   <div>Date Of Birth: {patient.DOB}</div>
-        // </li>
+
