@@ -2,11 +2,12 @@
 
 An IoT application for nurses and caretakers to track patient vitals
 
+![](http://i66.tinypic.com/ebc4fc.jpg)
 ![](http://i64.tinypic.com/1424i8h.png)
 
 ## Table of Contents 
 - [Description](#description)
-- [Technology Stack](#tech-stack)
+- [Technology Stack](#technology-stack)
 - [Architecture](#architecture)
 - [Getting Started](#getting-started)
 - [Team Members](#team-members)
